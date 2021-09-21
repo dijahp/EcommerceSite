@@ -1,0 +1,44 @@
+{
+"items": [
+    {
+      "name": "Beige Manuy Bag",
+      "img_url": "https://i.ibb.co/j6nCKHv/by-far-beige-manu-bag.jpg",
+      "price": 425
+    },
+        {
+      "name": "Black Stagg Kettle",
+      "img_url": "https://i.ibb.co/1JvBN7Y/fellow-black-stagg-pour-over-kettle-1-l.jpg",
+      "price": 105
+    },
+        {
+      "name": "Scandanavian BW Shakers",
+      "img_url": "https://i.ibb.co/P5RZxRZ/menu-black-and-off-white-beech-bottle-grinders.jpg",
+      "price": 245
+    },
+        {
+      "name": "Gold Loop Earrings",
+      "img_url": "https://i.ibb.co/FBMpcBF/balenciaga-gold-loop-earrings.jpg",
+      "price": 525
+    },
+        {
+      "name": "18k Gold Chain Necklace",
+      "img_url": "https://i.ibb.co/8bk6TQt/1017-alyx-9sm-gold-id-necklace.jpg",
+      "price": 800
+    },
+        {
+      "name": "Black Track Bag",
+      "img_url": "https://i.ibb.co/r2hr1L4/off-white-black-burrow-15-bag.jpg",
+      "price": 1000
+    },
+        {
+      "name": "Chunk Sandal",
+      "img_url": "https://i.ibb.co/XJHrWtx/balenciaga-taupe-chunky-platform-slides.jpg",
+      "price": 750
+    },
+    {
+      "name": "Rounded UV Glasses",
+      "img_url": "https://i.ibb.co/X3gCYdw/gucci-black-round-star-sunglasses.jpg",
+      "price": 200
+    }
+  ]
+}

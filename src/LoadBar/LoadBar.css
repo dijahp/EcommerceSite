@@ -1,0 +1,26 @@
+.loadBar-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.loadBar {
+  background-color: #92794f;
+  height: 10px;
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.loadNumber {
+  color: #807672;
+  justify-content: left;
+  padding: 0 20px;
+  transition: visibility 0.3s ease;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  animation: fade 2s linear;
+  transition: visibility 0s 2s, opacity 2s linear;
+}

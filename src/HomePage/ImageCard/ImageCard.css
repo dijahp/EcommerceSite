@@ -1,0 +1,32 @@
+.img-card {
+  margin: 10px 5px;
+  background-color: #fff;
+  min-height: 330px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out;
+}
+.img-card:hover {
+  transform: scale(0.95);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  color: #5e4f4f;
+}
+
+.product-info p {
+  width: 100px;
+}
+
+.img-card img {
+  margin-top: 10px;
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 10px;
+}

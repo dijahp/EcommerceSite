@@ -1,0 +1,21 @@
+.NewProductList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200px;
+}
+.NewProductList .nextBtn {
+  display: block;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  text-align: right;
+  margin-right: 20px;
+  color: #898980;
+}
+.newProducts {
+  display: flex;
+}
+
+.carousel-container {
+  width: 100vw;
+}

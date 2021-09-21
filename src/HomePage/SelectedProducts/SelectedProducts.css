@@ -1,0 +1,53 @@
+:root {
+  --animate-delay: 2s;
+}
+
+.selectedProducts-right {
+  text-align: right;
+  margin: 0 50px;
+  color: #b7b7ab;
+  transition: transform 0.3s ease-in-out;
+  height: 200px;
+  overflow: hidden;
+}
+
+.selectedProducts-right h4 {
+  text-transform: uppercase;
+}
+.selectedProducts-right h1 {
+  font-size: 8rem;
+  margin-top: -40px;
+  margin-bottom: -20px;
+}
+
+.selectedProducts-left {
+  width: 300px;
+  margin-left: 100px;
+  text-transform: uppercase;
+  color: #5e4f4f;
+}
+
+.selectedProducts-left {
+  height: 95px;
+  overflow: hidden;
+}
+
+.SelectedProducts a {
+  font-size: 1.2rem;
+  display: block;
+  color: #5e4f4f;
+  text-align: center;
+  margin-top: 20px;
+}
+.SelectedProducts a:hover {
+  font-size: 1.3rem;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(200%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

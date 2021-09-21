@@ -1,0 +1,52 @@
+.Navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+.Navigation h1 {
+  font-size: 2rem;
+  margin-top: -5px;
+  color: #807672;
+}
+
+.link-container ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.link-container ul li {
+  margin: 0 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #5e4f4f;
+}
+
+.link-container ul li:hover,
+.link-container ul li:active {
+  color: black;
+  font-weight: bold;
+}
+
+.minicart-container {
+  display: flex;
+  margin-top: 10px;
+}
+
+.minicart-container p {
+  margin: 0;
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #5e4f4f;
+}
+.minicart-container .circle {
+  display: flex;
+  background-color: #807672;
+  color: #f1ece4;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}

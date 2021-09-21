@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import LoadBar from './LoadBar/LoadBar';
+import HomePage from './HomePage';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
+  const [loading, setLoading] = useState();
+  const [loadNumber, setLoadNumber] = useState(0);
+
+  useEffect(() => {
+    setLoading(true);
+    const interval = setInterval(() => {
+      if (loadNumber < 100) {
+        setLoadNumber(loadNumber + 5);
+      } else if (loadNumber === 100) {
+        setLoading(false);
+      }
+    }, 150);
+    return () => clearInterval(interval);
+  }, [loadNumber]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <LoadBar loading={loading} loadNumber={loadNumber} />
+            <HomePage />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

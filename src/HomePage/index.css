@@ -1,0 +1,12 @@
+.Homepage-container {
+  background-color: #e5e5d6;
+  width: 100vw;
+  height: 100vh;
+  transform: translateY(2000px);
+  transition: transform 0.9s ease-in;
+  overflow-y: auto;
+}
+
+.Homepage-container.appear {
+  transform: translateY(-75px);
+}
