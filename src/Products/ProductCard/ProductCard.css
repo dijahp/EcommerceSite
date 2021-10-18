@@ -1,0 +1,33 @@
+.product-card {
+  background-color: #fff;
+  width: 420px;
+  font-family: 'Saira Condensed', sans-serif;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(0.98);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.product-card .img-section {
+  height: 350px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.product-card .single-product-info {
+  text-align: center;
+}
+.product-card .single-product-info p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #5e4f4f;
+}
+.product-card .single-product-info small {
+  display: block;
+  color: #b7b7ab;
+  text-align: center;
+}

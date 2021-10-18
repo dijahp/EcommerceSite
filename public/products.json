@@ -1,44 +1,68 @@
 {
 "items": [
     {
+      "id": 1,
       "name": "Beige Manuy Bag",
       "img_url": "https://i.ibb.co/j6nCKHv/by-far-beige-manu-bag.jpg",
-      "price": 425
+      "img_url2": "https://i.ibb.co/DtqThwL/by-far-beige-manu-bagperson.jpg",
+      "price": 425,
+      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor consequat ex, ultrices placerat nisl laoreet sed. Nunc varius convallis purus, non suscipit mauris pharetra sit amet. Phasellus imperdiet, urna at varius dictum, sem mi dignissim elit, at egestas elit diam eu odio."
     },
         {
+      "id": 2,
       "name": "Black Stagg Kettle",
       "img_url": "https://i.ibb.co/1JvBN7Y/fellow-black-stagg-pour-over-kettle-1-l.jpg",
-      "price": 105
+      "img_url2": "https://i.ibb.co/rm0VnYn/fellow-black-stagg-ekg-electric-kettle-09-l-ca-us.jpg",
+      "price": 105,
+      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor consequat ex, ultrices placerat nisl laoreet sed. Nunc varius convallis purus, non suscipit mauris pharetra sit amet. Phasellus imperdiet, urna at varius dictum, sem mi dignissim elit, at egestas elit diam eu odio."
     },
         {
+      "id": 3,
       "name": "Scandanavian BW Shakers",
       "img_url": "https://i.ibb.co/P5RZxRZ/menu-black-and-off-white-beech-bottle-grinders.jpg",
-      "price": 245
+      "img_url2": "https://i.ibb.co/M67BGRV/menu-black-and-off-white-beech-bottle-grinders-Two.jpg",
+      "price": 245,
+      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor consequat ex, ultrices placerat nisl laoreet sed. Nunc varius convallis purus, non suscipit mauris pharetra sit amet. Phasellus imperdiet, urna at varius dictum, sem mi dignissim elit, at egestas elit diam eu odio."
     },
         {
+      "id": 4,
       "name": "Gold Loop Earrings",
       "img_url": "https://i.ibb.co/FBMpcBF/balenciaga-gold-loop-earrings.jpg",
-      "price": 525
+      "img_url2": "https://i.ibb.co/FgJzcgw/balenciaga-gold-loop-earrings-Two.jpg",
+      "price": 525,
+      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor consequat ex, ultrices placerat nisl laoreet sed. Nunc varius convallis purus, non suscipit mauris pharetra sit amet. Phasellus imperdiet, urna at varius dictum, sem mi dignissim elit, at egestas elit diam eu odio."
     },
         {
+      "id": 5,
       "name": "18k Gold Chain Necklace",
       "img_url": "https://i.ibb.co/8bk6TQt/1017-alyx-9sm-gold-id-necklace.jpg",
-      "price": 800
+      "img_url2": "https://i.ibb.co/VLbgnHH/1017-alyx-9sm-gold-id-necklace-Two.jpg",
+      "price": 800,
+      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor consequat ex, ultrices placerat nisl laoreet sed. Nunc varius convallis purus, non suscipit mauris pharetra sit amet. Phasellus imperdiet, urna at varius dictum, sem mi dignissim elit, at egestas elit diam eu odio."
     },
         {
+      "id": 6,
       "name": "Black Track Bag",
       "img_url": "https://i.ibb.co/r2hr1L4/off-white-black-burrow-15-bag.jpg",
-      "price": 1000
+      "img_url2": "https://i.ibb.co/gZWCSp0/off-white-black-burrow-15-bag-Two.jpg",
+      "price": 1000,
+      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor consequat ex, ultrices placerat nisl laoreet sed. Nunc varius convallis purus, non suscipit mauris pharetra sit amet. Phasellus imperdiet, urna at varius dictum, sem mi dignissim elit, at egestas elit diam eu odio."
     },
         {
+      "id": 7,
       "name": "Chunk Sandal",
       "img_url": "https://i.ibb.co/XJHrWtx/balenciaga-taupe-chunky-platform-slides.jpg",
-      "price": 750
+      "img_url2": "https://i.ibb.co/LC3hmNK/balenciaga-taupe-chunky-platform-slides-Two.jpg",
+      "price": 750,
+      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor consequat ex, ultrices placerat nisl laoreet sed. Nunc varius convallis purus, non suscipit mauris pharetra sit amet. Phasellus imperdiet, urna at varius dictum, sem mi dignissim elit, at egestas elit diam eu odio."
     },
     {
+      "id": 8,
       "name": "Rounded UV Glasses",
       "img_url": "https://i.ibb.co/X3gCYdw/gucci-black-round-star-sunglasses.jpg",
-      "price": 200
+      "img_url2": "https://i.ibb.co/M1ZfVzt/gucci-black-round-star-sunglasses-Two.jpg",
+      "price": 200,
+      "desc" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor consequat ex, ultrices placerat nisl laoreet sed. Nunc varius convallis purus, non suscipit mauris pharetra sit amet. Phasellus imperdiet, urna at varius dictum, sem mi dignissim elit, at egestas elit diam eu odio."
     }
   ]
 }

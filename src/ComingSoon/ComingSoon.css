@@ -1,0 +1,12 @@
+.comingSoon-container{
+    display: grid;
+      width: 100%;
+  background-color: #e5e5d6;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.comeSoonImg{
+    justify-self: center;
+    align-items: center;
+}

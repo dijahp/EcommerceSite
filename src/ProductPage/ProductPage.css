@@ -1,0 +1,11 @@
+.ProductPage-container {
+  width: 100%;
+  background-color: #e5e5d6;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.middle-product .middle-product-img {
+  width: 400px;
+  height: 400px;
+}

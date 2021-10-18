@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;400;600&display=swap');
+
+.ProductsPage-container {
+  width: 100%;
+  background-color: #e5e5d6;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.productListed {
+  display: flex;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  flex-wrap: wrap;
+  width: 75%;
+  margin: 0 auto;
+}

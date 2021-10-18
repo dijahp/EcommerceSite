@@ -10,14 +10,8 @@ import ImageCard from '../ImageCard/ImageCard';
 import './NewProductList.css';
 import axios from 'axios';
 
-function NewProductList() {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    axios.get('products.json').then((res) => {
-      setData(res.data.items);
-    });
-  }, []);
+function NewProductList(props) {
+  const { data } = props;
 
   const responsive = {
     superLargeDesktop: {
