@@ -3,18 +3,24 @@ import './SingleProduct.css';
 
 function SingleProduct(props) {
   const { product, handleAddCart } = props;
-  const [activeImage, setActiveImage] = useState(product.img_url);
+  const [activeImage, setActiveImage] = useState(product?.assets[0].url);
   const [imgType, setImgType] = useState('img1');
   const [quantityVal, setQuantityVal] = useState('1');
-  let active = product.img_url;
-  let img = product.img_url;
+  let active = product?.assets[0].url;
+  let img = product?.assets[0].url;
+  let prodDesc = product.description.replace('<p>', '');
+  prodDesc = prodDesc.replace('</p>', '');
+  let productId = product.id;
 
   function handleActiveImage(img) {
     // Set state based on image clicked
 
-    img === 'img1' ? (active = product.img_url) : (active = product.img_url2);
+    img === 'img1'
+      ? (active = product?.assets[0].url)
+      : (active = product?.assets[1].url);
     setActiveImage(active);
     setImgType(img);
+    console.log(product);
   }
 
   const incrementQuantity = () => {
@@ -37,13 +43,13 @@ function SingleProduct(props) {
           onClick={() => handleActiveImage('img1')}
           className={`img-container ${imgType === 'img1' ? 'active' : ''} `}
         >
-          <img className="product-img1" src={product.img_url} alt="" />
+          <img className="product-img1" src={product?.assets[0].url} alt="" />
         </div>
         <div
           onClick={() => handleActiveImage('img2')}
           className={`img-container ${imgType === 'img2' ? 'active' : ''} `}
         >
-          <img className="product-img2" src={product.img_url2} alt="" />
+          <img className="product-img2" src={product?.assets[1].url} alt="" />
         </div>
       </div>
       <div className="middle-product">
@@ -58,7 +64,7 @@ function SingleProduct(props) {
       </div>
       <div className="right-product">
         <h2>{product.name}</h2>
-        <h4>${product.price}</h4>
+        <h4>${product.price.formatted}</h4>
         <div className="quantity-input">
           <button className="quantity-minus" onClick={decrementQuantity}>
             -
@@ -69,15 +75,19 @@ function SingleProduct(props) {
             min="1"
             max="10"
             value={quantityVal}
+            readOnly
           />
           <button className="quantity-minus" onClick={incrementQuantity}>
             +
           </button>
         </div>
-        <button className="add-cart" onClick={() => handleAddCart(quantityVal)}>
+        <button
+          className="add-cart"
+          onClick={() => handleAddCart(productId, quantityVal)}
+        >
           Add to cart
         </button>
-        <p className="product-desc">{product.desc}</p>
+        <p className="product-desc">{prodDesc}</p>
       </div>
     </div>
   );

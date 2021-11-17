@@ -5,7 +5,7 @@ import ProductCard from './ProductCard/ProductCard';
 import './ProductsPage.css';
 
 function ProductsPage(props) {
-  const { data } = props;
+  const { products } = props;
   let history = useHistory();
 
   const handleClick = (id) => {
@@ -15,14 +15,14 @@ function ProductsPage(props) {
   return (
     <div className="ProductsPage-container">
       <div className="productListed">
-        {data.map((product) => {
-          const { id, name, img_url, price } = product;
+        {products.map((product) => {
+          const { id, name, image, price } = product;
           return (
             <ProductCard
               id={id}
               name={name}
-              img_url={img_url}
-              price={price}
+              img_url={image.url}
+              price={price.formatted}
               handleClick={handleClick}
             />
           );

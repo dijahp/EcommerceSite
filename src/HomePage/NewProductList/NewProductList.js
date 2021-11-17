@@ -11,7 +11,7 @@ import './NewProductList.css';
 import axios from 'axios';
 
 function NewProductList(props) {
-  const { data } = props;
+  const { products } = props;
 
   const responsive = {
     superLargeDesktop: {
@@ -41,11 +41,11 @@ function NewProductList(props) {
           containerClass="carousel-container"
           infinite={true}
         >
-          {data.map((product, idx) => {
-            const { img_url, name, price } = product;
+          {products.map((product, idx) => {
+            const { image, name, price } = product;
             return (
               <ImageCard
-                img_url={img_url}
+                img_url={image.url}
                 name={name}
                 price={price}
                 key={idx}

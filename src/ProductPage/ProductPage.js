@@ -1,27 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Navigation from '../Navigation/Navigation';
-import axios from 'axios';
 import './ProductPage.css';
+import { commerce } from '../lib/commerce';
 import SingleProduct from './SingleProduct';
 
 function ProductPage(props) {
   let { id } = useParams();
   const [product, setProduct] = useState('');
-
   useEffect(() => {
-    axios('../products.json').then((res) => {
+    async function filtering() {
+      const res = await commerce.products.list();
       const { data } = res;
-      let dataArray = data.items;
-
-      let result = dataArray.filter((specProduct) => specProduct.id === +id);
-      result = result[0];
+      let result = data.filter((selectedProduct) => selectedProduct.id === id);
       setProduct(result);
-    });
-  }, []);
+    }
+
+    filtering();
+  });
   return (
     <div className="ProductPage-container">
-      <SingleProduct product={product} handleAddCart={props.handleAddCart} />
+      {product != '' ? (
+        <SingleProduct
+          product={product[0]}
+          handleAddCart={props.handleAddCart}
+        />
+      ) : (
+        <div>Bad</div>
+      )}
     </div>
   );
 }

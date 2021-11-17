@@ -1,0 +1,15 @@
+.CartItem-container{
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    width: 90vw;
+    padding: 10px 0;
+}
+
+.CartItem-middle{
+    width: 200px;
+}
+
+.CartPage-right{
+    width: 200px;
+}

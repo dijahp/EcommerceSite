@@ -12,25 +12,35 @@ import {
 import ProductsPage from './Products/ProductsPage';
 import ProductPage from './ProductPage/ProductPage';
 import ComingSoon from './ComingSoon/ComingSoon';
+import CartPage from './Cart/CartPage';
+
 import axios from 'axios';
 import Navigation from './Navigation/Navigation';
+import { commerce } from './lib/commerce';
 
 function App() {
   const [loading, setLoading] = useState();
   const [loadNumber, setLoadNumber] = useState(0);
   const [data, setData] = useState([]);
-  const [cartTotal, setCartTotal] = useState(() => {
-    let storedData = localStorage.getItem('cart');
-    if (!storedData) {
-      return 0;
-    } else {
-      return storedData;
-    }
-  });
+  const [cartTotal, setCartTotal] = useState();
+  // const addCartTotal = (amount) => {
+  //   setCartTotal(parseInt(cartTotal) + parseInt(amount));
+  //   localStorage.setItem('cart', cartTotal);
+  // };
 
-  const addCartTotal = (amount) => {
-    setCartTotal(parseInt(cartTotal) + parseInt(amount));
-    localStorage.setItem('cart', cartTotal);
+  const addToCartFunc = (product_id, qty) => {
+    let currentCart;
+    commerce.cart
+      .add(product_id, qty)
+      .then((response) => (currentCart = response.cart.id));
+    commerce.cart
+      .retrieve(currentCart)
+      .then((cart) => setCartTotal(cart.total_items));
+  };
+
+  const fetchProducts = async () => {
+    const res = await commerce.products.list();
+    setData(res.data);
   };
 
   useEffect(() => {
@@ -46,9 +56,8 @@ function App() {
   }, [loadNumber]);
 
   useEffect(() => {
-    axios.get('products.json').then((res) => {
-      setData(res.data.items);
-    });
+    commerce.cart.retrieve().then((cart) => setCartTotal(cart.total_items));
+    fetchProducts();
   }, []);
 
   return (
@@ -58,13 +67,13 @@ function App() {
         <Switch>
           <Route exact path="/">
             <LoadBar loading={loading} loadNumber={loadNumber} />
-            <HomePage data={data} />
+            <HomePage products={data} />
           </Route>
           <Route exact path="/products">
-            <ProductsPage data={data} />
+            <ProductsPage products={data} />
           </Route>
           <Route exact path="/products/:id">
-            <ProductPage handleAddCart={addCartTotal} />
+            <ProductPage handleAddCart={addToCartFunc} />
           </Route>
           <Route exact path="/blog">
             <ComingSoon />
@@ -74,6 +83,9 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <ComingSoon />
+          </Route>
+          <Route exact path="/cart">
+            <CartPage />
           </Route>
         </Switch>
       </div>

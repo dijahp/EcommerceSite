@@ -12,7 +12,7 @@ function HomePage(props) {
   return (
     <div className={`Homepage-container ${show ? 'appear' : ''}`}>
       <SelectedProducts />
-      <NewProductList data={props.data} />
+      <NewProductList products={props.products} />
     </div>
   );
 }

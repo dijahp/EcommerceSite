@@ -8,7 +8,7 @@ function ImageCard(props) {
       <img src={img_url} alt="" />
       <div className="product-info">
         <p>{name}</p>
-        <small>${price}</small>
+        <small>${price.formatted}</small>
       </div>
     </div>
   );
