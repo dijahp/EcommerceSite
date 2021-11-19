@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CartItem.css';
+import { commerce } from '../lib/commerce';
 
 function CartItem(props) {
-  const { name, line_total, price, image, quantity } = props.cartData;
-  console.log(image.url);
+  const { name, line_total, price, image, quantity, id } = props.cartData;
+  const { handleItemRemoval } = props;
+  const [quantityVal, setQuantityVal] = useState(quantity);
+  const [updatedLineTotal, setUpdatedLineTotal] = useState(line_total);
   const setQtyLimits = () => {
     let rows = [];
     for (let i = 1; i <= 10; i++) {
@@ -11,6 +14,14 @@ function CartItem(props) {
     }
     return rows;
   };
+
+  const handleItemQtyUpdate = (id, e) => {
+    commerce.cart.update(id, { quantity: e.target.value }).then((response) => {
+      setQuantityVal(response.quantity);
+      setUpdatedLineTotal(response.line_total);
+    });
+  };
+
   return (
     <div className="CartItem-container">
       <img src={image.url} alt="" />
@@ -22,7 +33,8 @@ function CartItem(props) {
             className="cart-qty-drop"
             name="Quantity"
             label="Quantity"
-            value={quantity}
+            value={quantityVal}
+            onChange={(e) => handleItemQtyUpdate(id, e)}
           >
             {setQtyLimits()}
           </select>
@@ -30,11 +42,13 @@ function CartItem(props) {
       </div>
       <div className="CartPage-right">
         <h4 className="cartItem-total">
-          ${line_total.formatted}{' '}
+          ${updatedLineTotal.formatted}{' '}
           <span className="indivtotal">(${price.raw} each)</span>
         </h4>
       </div>
-      <span className="DeleteItem">X</span>
+      <span className="DeleteItem" onClick={() => handleItemRemoval(id)}>
+        X
+      </span>
     </div>
   );
 }

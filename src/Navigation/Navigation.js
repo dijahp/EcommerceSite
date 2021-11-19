@@ -25,8 +25,10 @@ function Navigation(props) {
         </ul>
       </div>
       <div className="minicart-container">
-        <p>Cart</p>
-        <div className="circle">{cartTotal}</div>
+        <Link to="/cart" className="minicart">
+          <p>Cart</p>
+          <div className="circle">{cartTotal}</div>
+        </Link>
       </div>
     </nav>
   );
