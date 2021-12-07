@@ -1,0 +1,29 @@
+
+
+.shipping-name, .zipcity-container{
+    display: flex;
+    justify-content: space-between;
+
+}
+.shipping-name input, 
+.addressline-field input, 
+.zipcity-container input, 
+.state-field input, 
+.email-field input{
+    height: 30px;
+    width: 100%;
+}
+
+.addressline-field, .state-field, .email-field{
+    display: flex;
+    flex-direction: column;
+}
+
+.zipcity-container{
+    padding: 0;
+    margin: 0;
+}
+
+.zipcode-field, .city-field, .firstname-field, .lastname-field{
+    width: 48.5%;
+}

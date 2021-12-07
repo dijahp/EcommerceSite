@@ -2,10 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './CartPage.css';
 import CartItem from './CartItem';
 import { commerce } from '../lib/commerce';
+import { useHistory } from 'react-router-dom';
 
 function CartPage(props) {
   const [cartItems, setCartItems] = useState([]);
   const [itemDeleted, setItemDeleted] = useState();
+  let history = useHistory();
+
+  const handleClick = () => {
+    history.push(`/checkout`);
+  };
 
   const fetchCartItems = () => {
     commerce.cart.contents().then((res) => {
@@ -38,7 +44,7 @@ function CartPage(props) {
       <div className="CartPage-inner">
         <div className="CartPage-header">
           <h1>Your Shopping Bag</h1>
-          <button>Checkout</button>
+          <button onClick={handleClick}>Checkout</button>
         </div>
         <div className="Cart-items">{displayNoneorItems()}</div>
       </div>

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './ProductPage.css';
 import { commerce } from '../lib/commerce';
 import SingleProduct from './SingleProduct';
-
+import Loader from '../Shared/Loading';
 function ProductPage(props) {
   let { id } = useParams();
   const [product, setProduct] = useState('');
@@ -25,7 +25,7 @@ function ProductPage(props) {
           handleAddCart={props.handleAddCart}
         />
       ) : (
-        <div>Bad</div>
+        <Loader />
       )}
     </div>
   );

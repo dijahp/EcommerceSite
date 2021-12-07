@@ -1,0 +1,17 @@
+.CheckoutPage-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+width: 100%;
+background-color: #e5e5d6;
+height: 100%;
+overflow: scroll;
+box-sizing: border-box;
+justify-items: center;
+}
+
+.CheckoutPage-container .left-checkout{
+    display: flex;
+    flex-direction: column;
+    width: 52%;
+
+}

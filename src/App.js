@@ -13,6 +13,7 @@ import ProductsPage from './Products/ProductsPage';
 import ProductPage from './ProductPage/ProductPage';
 import ComingSoon from './ComingSoon/ComingSoon';
 import CartPage from './Cart/CartPage';
+import CheckoutPage from './Checkout/CheckoutPage';
 
 import axios from 'axios';
 import Navigation from './Navigation/Navigation';
@@ -22,6 +23,7 @@ function App() {
   const [loading, setLoading] = useState();
   const [loadNumber, setLoadNumber] = useState(0);
   const [data, setData] = useState([]);
+  const [cart, setCart] = useState();
   const [cartTotal, setCartTotal] = useState();
   // const addCartTotal = (amount) => {
   //   setCartTotal(parseInt(cartTotal) + parseInt(amount));
@@ -33,9 +35,10 @@ function App() {
     commerce.cart
       .add(product_id, qty)
       .then((response) => (currentCart = response.cart.id));
-    commerce.cart
-      .retrieve(currentCart)
-      .then((cart) => setCartTotal(cart.total_items));
+    commerce.cart.retrieve(currentCart).then((cart) => {
+      setCartTotal(cart.total_items);
+      setCart(cart);
+    });
   };
 
   const fetchProducts = async () => {
@@ -58,6 +61,7 @@ function App() {
   useEffect(() => {
     commerce.cart.retrieve().then((cart) => setCartTotal(cart.total_items));
     fetchProducts();
+    setCart(cart);
   }, []);
 
   return (
@@ -74,6 +78,9 @@ function App() {
           </Route>
           <Route exact path="/products/:id">
             <ProductPage handleAddCart={addToCartFunc} />
+          </Route>
+          <Route exact path="/checkout">
+            <CheckoutPage cart={cart} />
           </Route>
           <Route exact path="/blog">
             <ComingSoon />

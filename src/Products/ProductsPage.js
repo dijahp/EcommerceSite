@@ -19,6 +19,7 @@ function ProductsPage(props) {
           const { id, name, image, price } = product;
           return (
             <ProductCard
+              key={id}
               id={id}
               name={name}
               img_url={image.url}
