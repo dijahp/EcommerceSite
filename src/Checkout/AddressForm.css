@@ -1,4 +1,28 @@
+.AddressForm label{
+font-size: 1.1rem;
+}
 
+.addressContBtn{
+    cursor: pointer;
+    display: block;
+    border:none;
+    margin-top: 30px;
+    width: 102%;
+    height: 40px;
+    background-color: #5b5b55;
+    color: #fff;
+    font-size: 1.2rem;
+
+}
+
+.addressContBtn:hover{
+
+    transform: scale(.8);
+    background-color: #5b5b55;
+    color: #fff;
+
+
+}
 
 .shipping-name, .zipcity-container{
     display: flex;
@@ -10,8 +34,16 @@
 .zipcity-container input, 
 .state-field input, 
 .email-field input{
+      font-family: 'Saira Condensed', sans-serif;
     height: 30px;
-    width: 100%;
+    width: calc(100% - 5px);
+    font-size: 1rem;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.AddressForm input:focus{
+    outline: none;
 }
 
 .addressline-field, .state-field, .email-field{
@@ -26,4 +58,15 @@
 
 .zipcode-field, .city-field, .firstname-field, .lastname-field{
     width: 48.5%;
+}
+
+@media all and (max-width: 768px) { 
+.shipping-name, .zipcity-container{
+    display: inline;
+    
+}
+.zipcode-field, .city-field, .firstname-field, .lastname-field{
+    width: 100%;
+}
+
 }

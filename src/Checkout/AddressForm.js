@@ -78,7 +78,9 @@ function AddressForm(props) {
         <label htmlFor="email">Email</label>
         <input value={values.email} name="email" onChange={handleInputChange} />
       </div>
-      <button type="submit">Save and Continue</button>
+      <button className="addressContBtn" type="submit">
+        Save and Continue
+      </button>
     </form>
   );
 }

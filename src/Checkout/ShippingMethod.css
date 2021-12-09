@@ -1,0 +1,49 @@
+.shipping-method-item label{
+font-size: 1.1rem;
+margin-left: 6px;
+}
+.shipping-method-item input{
+    cursor: pointer;
+}
+
+.shipping-method-item input:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid white;
+    }
+
+    .shipping-method-item input:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #5b5b55;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 1px solid white;
+    }
+
+
+.ShippingMethod button{
+    cursor: pointer;
+    display: block;
+    border:none;
+    margin-top: 30px;
+    width: 102%;
+    height: 40px;
+    background-color: #5b5b55;
+    color: #fff;
+    font-size: 1.2rem;
+
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { commerce } from '../lib/commerce';
+import './ShippingMethod.css';
 
 function ShippingMethod(props) {
   const { checkoutToken, setShippingChoice } = props;

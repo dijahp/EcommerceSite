@@ -17,6 +17,55 @@ function CheckoutPage(props) {
     setActiveStep(1);
   };
 
+  const handlePlaceOrder = (e) => {
+    e.preventDefault();
+    const { firstname, lastname, address, zipcode, city, state, email } =
+      shippingAddress;
+    commerce.checkout
+      .capture(checkoutToken, {
+        customer: {
+          firstname,
+          lastname,
+          email,
+        },
+        shipping: {
+          name: `${firstname} ${lastname}`,
+          street: address,
+          town_city: city,
+          county_state: `US-${state}`,
+          postal_zip_code: zipcode,
+          country: 'US',
+        },
+        fulfillment: {
+          shipping_method: shippingChoice,
+        },
+        billing: {
+          name: `${firstname} ${lastname}`,
+          street: address,
+          town_city: city,
+          county_state: `US-${state}`,
+          postal_zip_code: zipcode,
+          country: 'US',
+        },
+        payment: {
+          gateway: 'test_gateway',
+          card: {
+            number: '4242424242424242',
+            expiry_month: '02',
+            expiry_year: '24',
+            cvc: '123',
+            postal_zip_code: '94107',
+          },
+        },
+      })
+      .then((order) => {
+        console.log(order);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(() => {
     const generateToken = async () => {
       try {
@@ -47,7 +96,11 @@ function CheckoutPage(props) {
         </div>
         <div className="payment-method">
           <h2 className="payment-method-heading">Payment Method</h2>
-          <Payment />
+          <p className="payment-feedback">
+            This checkout is in Test Mode and will automatically use a test
+            card. Click Complete Order.
+          </p>
+          <Payment handlePlaceOrder={handlePlaceOrder} />
         </div>
       </div>
       <div className="order-summary"></div>
