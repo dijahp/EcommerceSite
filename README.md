@@ -1,6 +1,6 @@
 ## Before you start
 
-Create a Commerce.js account, add your own products and place your account's API key in a .env file at the root of this project.
+Create a Commerce.js account, add your own products and place your account's API key in a .env file at the root of this project. Alternatively, you can use the public key in the repo with pre-loaded products. 
 
 ## Installation
 
