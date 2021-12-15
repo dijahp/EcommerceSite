@@ -12,8 +12,9 @@ function CheckoutPage(props) {
   const [checkoutToken, setCheckoutToken] = useState();
   const [shippingChoice, setShippingChoice] = useState();
   const [shippingPrice, setShippingPrice] = useState(0.00);
+  const [orderID, setOrderID] = useState();
 
-  const { cart } = props;
+  const { cart} = props;
   const advanceFromAddress = (data) => {
     setShippingAddress(data);
     setActiveStep(1);
@@ -61,7 +62,12 @@ function CheckoutPage(props) {
         },
       })
       .then((order) => {
-        console.log(order);
+        console.log(order)
+        //Maybe delete this
+        setOrderID(order.id)
+        commerce.cart.empty().then(res => console.log(res))
+        const orderRedirect = `/order?token=${order.id}`
+        return window.location.assign(orderRedirect)
       })
       .catch((error) => {
         console.log(error);

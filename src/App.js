@@ -18,6 +18,7 @@ import CheckoutPage from './Checkout/CheckoutPage';
 import axios from 'axios';
 import Navigation from './Navigation/Navigation';
 import { commerce } from './lib/commerce';
+import CelebrationMoment from './CelebrationMoment/CelebrationMoment';
 
 function App() {
   const [loading, setLoading] = useState();
@@ -25,6 +26,7 @@ function App() {
   const [data, setData] = useState([]);
   const [cart, setCart] = useState();
   const [cartTotal, setCartTotal] = useState();
+
   // const addCartTotal = (amount) => {
   //   setCartTotal(parseInt(cartTotal) + parseInt(amount));
   //   localStorage.setItem('cart', cartTotal);
@@ -64,6 +66,7 @@ function App() {
     setCart(cart);
   }, []);
 
+
   return (
     <Router>
       <div className="App">
@@ -93,6 +96,9 @@ function App() {
           </Route>
           <Route exact path="/cart">
             <CartPage />
+          </Route>
+          <Route exact path="/order">
+            <CelebrationMoment />
           </Route>
         </Switch>
       </div>
