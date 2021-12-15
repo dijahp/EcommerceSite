@@ -104,3 +104,45 @@ input[type=number] {
   color: #fff;
   background-color: #342c2c;
 }
+
+
+@media all and (min-width: 768px) and (max-width: 1024px) { 
+
+  .middle-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media all and (min-width: 480px) and (max-width: 768px) {
+
+  .img-container {
+    display: none;
+  }
+
+  .middle-product {
+    height: 300px;
+    width: 300px;
+  }
+  .singleProductView {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .product-desc{
+    visibility: hidden;
+  }
+
+
+ }

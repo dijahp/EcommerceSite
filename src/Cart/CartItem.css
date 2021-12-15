@@ -13,3 +13,18 @@
 .CartPage-right{
     width: 200px;
 }
+
+.CartItem-qtycontainer{
+    display: flex;
+}
+.CartItem-qtycontainer p{
+    font-size: 1.1rem;
+    margin: 0;
+}
+.CartItem-qtycontainer select{
+    font-size: .8rem;
+    text-align: center;
+    margin-left: 20px;
+    height: 30px;
+    width: 50px;
+}
