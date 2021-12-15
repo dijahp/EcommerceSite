@@ -1,6 +1,6 @@
 .CheckoutPage-container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
 width: 100%;
 background-color: #e5e5d6;
 height: calc(100% - 144px);
@@ -44,6 +44,12 @@ overflow: scroll !important;
 
 }
 
+.order-summary{
+    background-color: #f6f6f4 ;
+    width: 70%;
+
+    }
+
 @media all and (max-width: 768px) { 
 .CheckoutPage-container{
 display: grid;
@@ -55,7 +61,5 @@ box-sizing: border-box;
 justify-items: center;
 overflow: scroll !important;
 }
-.order-summary{
-    display: none;
-}
+
 }

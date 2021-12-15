@@ -3,7 +3,7 @@ import { commerce } from '../lib/commerce';
 import './ShippingMethod.css';
 
 function ShippingMethod(props) {
-  const { checkoutToken, setShippingChoice } = props;
+  const { checkoutToken, setShippingChoice, setShippingPrice } = props;
   const [shippingMethods, setShippingMethods] = useState([]);
   const [selected, setSelected] = useState();
   const [shippingID, setShippingID] = useState();
@@ -20,10 +20,12 @@ function ShippingMethod(props) {
   const handleShippingChange = (e) => {
     setSelected(e.target.value);
     setShippingID(e.target.getAttribute('id').split('-')[1]);
+    setShippingPrice(e.target.getAttribute('data-price'))
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     setShippingChoice(shippingID);
+
   };
   useEffect(() => {
     getShippingMethods();
@@ -37,6 +39,7 @@ function ShippingMethod(props) {
         value={method.description}
         onChange={handleShippingChange}
         checked={selected === method.description}
+        data-price={method.price.formatted}
       />
       <label htmlFor="shippingmethod">
         {method.description}

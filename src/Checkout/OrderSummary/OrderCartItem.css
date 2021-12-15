@@ -1,0 +1,21 @@
+.OrderCartItem-container {
+    display: flex;
+    width: 90%;
+}
+
+.OrderCartItem-img{
+    width: 80px;
+    margin-bottom: 10px;
+
+}
+
+.right-order-cart{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+.right-order-cart-name{
+margin-left: 20px;
+}

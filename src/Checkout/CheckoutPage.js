@@ -4,12 +4,14 @@ import { commerce } from '../lib/commerce';
 import AddressForm from './AddressForm';
 import ShippingMethod from './ShippingMethod';
 import Payment from './Payment';
+import OrderSummary from './OrderSummary/OrderSummary';
 
 function CheckoutPage(props) {
   const [shippingAddress, setShippingAddress] = useState({});
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState();
   const [shippingChoice, setShippingChoice] = useState();
+  const [shippingPrice, setShippingPrice] = useState(0.00);
 
   const { cart } = props;
   const advanceFromAddress = (data) => {
@@ -92,6 +94,7 @@ function CheckoutPage(props) {
           <ShippingMethod
             checkoutToken={checkoutToken}
             setShippingChoice={setShippingChoice}
+            setShippingPrice={setShippingPrice}
           />
         </div>
         <div className="payment-method">
@@ -103,7 +106,9 @@ function CheckoutPage(props) {
           <Payment handlePlaceOrder={handlePlaceOrder} />
         </div>
       </div>
-      <div className="order-summary"></div>
+      <div className="order-summary">
+        <OrderSummary cart={cart} shippingPrice={shippingPrice}/>
+      </div>
     </div>
   );
 }

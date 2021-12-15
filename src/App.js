@@ -30,12 +30,12 @@ function App() {
   //   localStorage.setItem('cart', cartTotal);
   // };
 
-  const addToCartFunc = (product_id, qty) => {
+  const addToCartFunc = async (product_id, qty) => {
     let currentCart;
-    commerce.cart
+    await commerce.cart
       .add(product_id, qty)
       .then((response) => (currentCart = response.cart.id));
-    commerce.cart.retrieve(currentCart).then((cart) => {
+    await commerce.cart.retrieve(currentCart).then((cart) => {
       setCartTotal(cart.total_items);
       setCart(cart);
     });
